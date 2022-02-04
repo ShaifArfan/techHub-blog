@@ -1,6 +1,6 @@
 import React from 'react';
-import IndexStyles from '../styles/IndexStyles';
+import Layout from '../components/Layout';
 
-const IndexPage = () => <IndexStyles>Hello world</IndexStyles>;
+const IndexPage = () => <Layout />;
 
 export default IndexPage;

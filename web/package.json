@@ -15,7 +15,10 @@
 		"clean": "gatsby clean"
 	},
 	"dependencies": {
+		"@fontsource/inter": "^4.5.2",
+		"@fontsource/poppins": "^4.5.1",
 		"babel-plugin-styled-components": "^2.0.2",
+		"clsx": "^1.1.1",
 		"gatsby": "^4.6.0",
 		"gatsby-plugin-image": "^2.6.0",
 		"gatsby-plugin-sharp": "^4.6.0",
@@ -23,8 +26,10 @@
 		"gatsby-source-filesystem": "^4.6.0",
 		"gatsby-source-sanity": "^7.3.2",
 		"gatsby-transformer-sharp": "^4.6.0",
+		"normalize.css": "^8.0.1",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
+		"react-icons": "^4.3.1",
 		"styled-components": "^5.3.3"
 	},
 	"devDependencies": {
