@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config('./.env');
 
 module.exports = {
   siteMetadata: {
@@ -6,13 +6,18 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: '',
-        dataset: '',
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
       },
     },
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-styled-components',
+    },
   ],
 };

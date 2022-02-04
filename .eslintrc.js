@@ -1,18 +1,7 @@
 module.exports = {
-  parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: "module",
-    ecmaVersion: 2020,
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  env: {
-    node: true,
-    browser: true,
-  },
+  extends: ['wesbos'],
   rules: {
     'react/prop-types': 'off',
+    'import/no-extraneous-dependencies': 'off',
   },
-  extends: ['wesbos'],
 };
