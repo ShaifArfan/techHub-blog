@@ -22,8 +22,10 @@ const GlobalStyles = createGlobalStyle`
   html{
     font-size: 10px;
   }
+  
   body{
     min-height: 100vh;
+    line-height: 1.5;
     width: 100%;
     font-family: 'Inter';
     background: var(--black-1);
@@ -41,6 +43,9 @@ const GlobalStyles = createGlobalStyle`
   img, svg{
     height: 100%;
     width: 100%;
+  }
+  li, ul{
+    list-style: none;
   }
 `;
 

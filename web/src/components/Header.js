@@ -5,11 +5,11 @@ import { MdClose, MdMenu } from 'react-icons/md';
 import HeaderStyles from '../styles/HeaderStyles';
 import Logo from './Logo';
 import ActionButton from './buttons/ActionButton';
+import { menu } from '../constants/menu';
 
 function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  console.log('test');
 
   useEffect(() => {
     const checkWidth = () => {
@@ -22,7 +22,6 @@ function Header() {
 
   return (
     <HeaderStyles>
-      <div className="bg" />
       <div className="container">
         <div className="header__container">
           <div className="logo">
@@ -38,16 +37,24 @@ function Header() {
             {isMobile && (
               <>
                 <ActionButton
-                  // className="mobileMenuBtn"
-                  onKeyDown={() => setIsNavOpen(!isNavOpen)}
-                  onClick={() => setIsNavOpen(!isNavOpen)}
+                  className="mobileMenuBtn"
+                  onKeyDown={() => setIsNavOpen(true)}
+                  onClick={() => setIsNavOpen(true)}
                 >
                   <MdMenu />
                 </ActionButton>
-                <div className="mobileNavBg" />
+                {isNavOpen && (
+                  <div
+                    aria-label="Close Menu"
+                    role="button"
+                    tabIndex={0}
+                    className="mobileNavBg"
+                    onKeyDown={() => setIsNavOpen(false)}
+                    onClick={() => setIsNavOpen(false)}
+                  />
+                )}
               </>
             )}
-
             <nav>
               {isMobile && (
                 <ActionButton
@@ -59,12 +66,11 @@ function Header() {
                 </ActionButton>
               )}
               <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/blogs">Blogs</Link>
-                </li>
+                {menu.map((item) => (
+                  <li key={item.path}>
+                    <Link to={item.path}>{item.title}</Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
