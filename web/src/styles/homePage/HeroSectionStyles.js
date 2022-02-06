@@ -6,7 +6,22 @@ export const HeroSectionStyles = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  .container {
+    height: 100%;
+  }
   .hero__wrapper {
+    width: 100%;
+    height: 100%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, #030213, #08011c);
+      z-index: -1;
+    }
     .left {
       width: 50%;
       .hero__heading {
@@ -42,6 +57,9 @@ export const HeroSectionStyles = styled.div`
       align-items: flex-start;
       justify-content: center;
       flex-direction: column-reverse;
+      &::after {
+        width: 100%;
+      }
       .right {
         position: initial;
         display: flex;

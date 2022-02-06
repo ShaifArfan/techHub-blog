@@ -16,7 +16,7 @@ function HeroSection() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem
               ipsum dolor sit amet consectetur adipisicing elit
             </ParagraphText>
-            <Button tag={Link} className="hero__button">
+            <Button to="/blogs" tag={Link} className="hero__button">
               Explore Blogs
             </Button>
           </div>
