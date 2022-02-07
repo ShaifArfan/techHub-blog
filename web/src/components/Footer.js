@@ -32,7 +32,8 @@ function Footer() {
           ))}
         </ul>
         <ParagraphText className="copyright">
-          © Artistic Creative 2022. All rights reserved
+          © TechHub-Blog Creative {new Date().getFullYear()}. All rights
+          reserved
         </ParagraphText>
       </div>
     </FooterStyles>

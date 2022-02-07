@@ -10,18 +10,32 @@ import { menu } from '../constants/menu';
 function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [scrollPos, setScrollPos] = useState(true);
 
   useEffect(() => {
     const checkWidth = () => {
       setIsMobile(window.matchMedia('(max-width: 768px)').matches);
     };
+    const handleScroll = () => {
+      setScrollPos(window.scrollY < 100);
+    };
 
     checkWidth();
+    handleScroll();
     window.addEventListener('resize', checkWidth);
+    window.addEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'initial';
+    }
+  }, [isNavOpen]);
+
   return (
-    <HeaderStyles>
+    <HeaderStyles className={clsx(scrollPos <= 0 && 'scrolled')}>
       <div className="container">
         <div className="header__container">
           <div className="logo">

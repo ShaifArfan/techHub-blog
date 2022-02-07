@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export default styled.header`
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   overflow: hidden;
   padding: 1rem 0;
+  transition: background 0.3s ease-in-out;
   .header__container {
     display: flex;
     justify-content: space-between;

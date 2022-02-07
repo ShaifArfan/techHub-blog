@@ -13,14 +13,24 @@ export const BlogItemStyles = styled(Link)`
     transition: 0.3s ease-in-out transform;
   }
   .title {
-    font-size: 2rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
     margin-bottom: 1rem;
   }
   &:hover {
     .img {
       transform: scale(1.05);
+    }
+  }
+  .categoriesText {
+    a {
+      color: var(--gray);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .title {
+      margin-bottom: 0.5rem;
     }
   }
 `;
