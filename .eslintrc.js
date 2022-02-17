@@ -5,5 +5,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'global-require': 'off',
     'no-nested-ternary': 'off',
+    'react/jsx-pascal-case': 'error',
   },
 };

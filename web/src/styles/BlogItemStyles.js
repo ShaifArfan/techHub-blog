@@ -6,8 +6,7 @@ export const BlogItemStyles = styled(Link)`
   cursor: pointer;
   border-radius: 12px;
   .img {
-    width: 100%;
-    max-height: 300px;
+    height: 250px;
     margin-bottom: 1.5rem;
     border-radius: 12px;
     transition: 0.3s ease-in-out transform;

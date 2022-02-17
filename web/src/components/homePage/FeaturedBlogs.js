@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { FeaturedBlogsStyles } from '../../styles/homePage/FeaturedBlogsStyles';
+import BlogGrid from '../BlogGrid';
 import BlogItem from '../BlogItem';
 import ParagraphText from '../typography/ParagraphText';
 import { SectionTitle } from '../typography/Title';
@@ -43,22 +44,8 @@ function FeaturedBlogs() {
           nemo ad provident consectetur quis eaque doloribus et, ducimus earum
           iste est corporis
         </ParagraphText>
-        <div className="featuredBlogs__container">
-          {featuredBlogs &&
-            featuredBlogs.map((blog) => (
-              <BlogItem
-                key={blog._id}
-                path={blog.slug.current}
-                title={blog.title}
-                categories={blog.categories}
-                image={{
-                  imageData: blog.coverImage.asset.gatsbyImageData,
-                  altText: blog.coverImage.alt,
-                }}
-              />
-            ))}
-        </div>
       </div>
+      <BlogGrid blogs={featuredBlogs} />
     </FeaturedBlogsStyles>
   );
 }

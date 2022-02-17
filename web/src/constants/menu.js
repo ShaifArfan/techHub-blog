@@ -8,6 +8,10 @@ export const menu = [
     path: '/blogs',
   },
   {
+    title: 'Categories',
+    path: '/categories',
+  },
+  {
     title: 'Contact',
     path: '/contact',
   },
