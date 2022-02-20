@@ -1,26 +1,32 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import PageSpace from '../components/PageSpace';
 import SEO from '../components/seo';
 import PageHeader from '../components/PageHeader';
 import CategoryGrid from '../components/CategoryGrid';
+import Pagination from '../components/Pagination';
 
-function Categories() {
-  const data = useStaticQuery(graphql`
-    {
-      allSanityCategory(sort: { fields: _createdAt, order: DESC }) {
-        nodes {
-          _id
-          title
-          slug {
-            current
-          }
-          _rawDescription
+export const CategoryListQuery = graphql`
+  query categoriesQuery($limit: Int!, $offset: Int!) {
+    allSanityCategory(
+      sort: { fields: _createdAt, order: DESC }
+      limit: $limit
+      skip: $offset
+    ) {
+      nodes {
+        _id
+        title
+        slug {
+          current
         }
+        _rawDescription
       }
     }
-  `);
+  }
+`;
 
+function Categories({ data, pageContext }) {
+  const { currentPage, numberOfPages } = pageContext;
   const categories = data.allSanityCategory.nodes;
   console.log(categories);
   return (
@@ -32,6 +38,11 @@ function Categories() {
           description="This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award ceremony..."
         />
         <CategoryGrid categories={categories} />
+        <Pagination
+          currentPage={currentPage}
+          numberOfPages={numberOfPages}
+          baseURL="/categories"
+        />
       </PageSpace>
     </>
   );

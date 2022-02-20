@@ -8,7 +8,6 @@ import { SearchModalStyles } from '../../styles/search/SearchModalStyles';
 import ActionButton from '../buttons/ActionButton';
 import SearchResult from '../SearchResult';
 import SearchField from './SearchField';
-import BlogSearchResultItem from './SearchResultItem';
 
 const query = graphql`
   {

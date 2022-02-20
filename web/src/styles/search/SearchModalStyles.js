@@ -11,7 +11,8 @@ export const SearchModalStyles = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 20%;
+    top: 100px;
+    max-height: calc(100% - 150px);
     width: 100%;
     max-width: 500px;
     background-color: var(--black-1);
@@ -33,7 +34,7 @@ export const SearchModalStyles = styled.div`
       flex-direction: column;
       gap: 1rem;
       width: 100%;
-      max-height: 500px;
+
       overflow-y: auto;
     }
   }

@@ -11,8 +11,4 @@ export const menu = [
     title: 'Categories',
     path: '/categories',
   },
-  {
-    title: 'Contact',
-    path: '/contact',
-  },
 ];

@@ -1,14 +1,18 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import React, { useState } from 'react';
+import { graphql } from 'gatsby';
+import React from 'react';
 import PageHeader from '../components/PageHeader';
 import SEO from '../components/seo';
 import PageSpace from '../components/PageSpace';
 import BlogGrid from '../components/BlogGrid';
-import MyPaginate from '../components/MyPaginate';
+import Pagination from '../components/Pagination';
 
-const BlogsQuery = graphql`
-  {
-    allSanityBlog(sort: { fields: publishedAt, order: DESC }) {
+export const BlogsQuery = graphql`
+  query blogListQuery($limit: Int!, $offset: Int!) {
+    allSanityBlog(
+      sort: { fields: publishedAt, order: DESC }
+      limit: $limit
+      skip: $offset
+    ) {
       nodes {
         _id
         title
@@ -32,8 +36,8 @@ const BlogsQuery = graphql`
   }
 `;
 
-function Blogs() {
-  const data = useStaticQuery(BlogsQuery);
+function Blogs({ data, pageContext }) {
+  const { currentPage, numberOfPages } = pageContext;
   const blogs = data.allSanityBlog.nodes;
 
   return (
@@ -45,7 +49,11 @@ function Blogs() {
           description="This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award ceremony..."
         />
         <BlogGrid blogs={blogs} />
-        <MyPaginate />
+        <Pagination
+          currentPage={currentPage}
+          numberOfPages={numberOfPages}
+          baseURL="/blogs"
+        />
       </PageSpace>
     </>
   );
