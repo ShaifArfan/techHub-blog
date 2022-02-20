@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import clsx from 'clsx';
-import { MdClose, MdMenu } from 'react-icons/md';
+import { MdClose, MdMenu, MdSearch } from 'react-icons/md';
 import HeaderStyles from '../styles/HeaderStyles';
 import Logo from './Logo';
 import ActionButton from './buttons/ActionButton';
 import { menu } from '../constants/menu';
+import { SearchModalContext } from '../contexts/searchModalContext';
 
 function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [scrollPos, setScrollPos] = useState(true);
+  const { openSearchModal } = useContext(SearchModalContext);
 
   useEffect(() => {
     const checkWidth = () => {
@@ -34,6 +36,10 @@ function Header() {
     }
   }, [isNavOpen]);
 
+  const handleSearchModalOpen = () => {
+    openSearchModal();
+  };
+
   return (
     <HeaderStyles className={clsx(scrollPos <= 0 && 'scrolled')}>
       <div className="container">
@@ -50,13 +56,26 @@ function Header() {
           >
             {isMobile && (
               <>
-                <ActionButton
-                  className="mobileMenuBtn"
-                  onKeyDown={() => setIsNavOpen(true)}
-                  onClick={() => setIsNavOpen(true)}
-                >
-                  <MdMenu />
-                </ActionButton>
+                <div className="mobileIcon">
+                  <div className="searchIcon">
+                    <div
+                      className="searchIcon__wrapper"
+                      onClick={handleSearchModalOpen}
+                      onKeyDown={handleSearchModalOpen}
+                      tabIndex={0}
+                      role="button"
+                    >
+                      <MdSearch />
+                    </div>
+                  </div>
+                  <ActionButton
+                    className="mobileMenuBtn"
+                    onKeyDown={() => setIsNavOpen(true)}
+                    onClick={() => setIsNavOpen(true)}
+                  >
+                    <MdMenu />
+                  </ActionButton>
+                </div>
                 {isNavOpen && (
                   <div
                     aria-label="Close Menu"
@@ -85,6 +104,19 @@ function Header() {
                     <Link to={item.path}>{item.title}</Link>
                   </li>
                 ))}
+                {!isMobile && (
+                  <li className="searchIcon">
+                    <div
+                      className="searchIcon__wrapper"
+                      onClick={handleSearchModalOpen}
+                      onKeyDown={handleSearchModalOpen}
+                      tabIndex={0}
+                      role="button"
+                    >
+                      <MdSearch />
+                    </div>
+                  </li>
+                )}
               </ul>
             </nav>
           </div>

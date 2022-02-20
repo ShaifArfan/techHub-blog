@@ -17,14 +17,23 @@ export default styled.header`
   }
   nav {
     ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
       li {
-        display: inline-block;
-        margin: 0 1rem;
+        &:hover {
+          a {
+            background: var(--black-2);
+          }
+        }
         a {
           color: var(--white-1);
           display: inline-block;
           text-decoration: none;
           font-size: 1.6rem;
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
         }
       }
     }
@@ -46,18 +55,19 @@ export default styled.header`
       ul {
         width: 90%;
         margin: 0 auto;
+        flex-direction: column;
         li {
           display: block;
           margin: 0.5rem 0;
-          a {
-            width: 100%;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-          }
           &:hover {
             a {
               background: var(--black-1);
             }
+          }
+          a {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
           }
         }
       }
@@ -88,5 +98,21 @@ export default styled.header`
       transition: opacity 0.6s linear 0s;
       background: rgba(0, 0, 0, 0.5);
     }
+  }
+  .searchIcon {
+    cursor: pointer;
+    font-size: 25px;
+    .searchIcon__wrapper {
+      border-radius: 6px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--black-2);
+    }
+  }
+  .mobileIcon {
+    display: flex;
+    gap: 1rem;
   }
 `;

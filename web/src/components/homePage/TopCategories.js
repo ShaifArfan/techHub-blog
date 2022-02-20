@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { TopCategoriesStyles } from '../../styles/homePage/TopCategoriesStyles';
+import CategoryGrid from '../CategoryGrid';
 import CategoryItem from '../CategoryItem';
 import ParagraphText from '../typography/ParagraphText';
 import { SectionTitle } from '../typography/Title';
@@ -31,17 +32,8 @@ function TopCategories() {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
           veniam fuga minima.
         </ParagraphText>
-        <div className="topCategories__wrapper">
-          {categories.map((item) => (
-            <CategoryItem
-              key={item._id}
-              title={item.title}
-              description={item._rawDescription}
-              slug={item.slug}
-            />
-          ))}
-        </div>
       </div>
+      <CategoryGrid categories={categories} />
     </TopCategoriesStyles>
   );
 }
