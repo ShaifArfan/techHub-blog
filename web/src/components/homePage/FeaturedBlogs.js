@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { FeaturedBlogsStyles } from '../../styles/homePage/FeaturedBlogsStyles';
-import BlogGrid from '../BlogGrid';
-import BlogItem from '../BlogItem';
+import BlogGrid from '../blog/BlogGrid';
 import ParagraphText from '../typography/ParagraphText';
 import { SectionTitle } from '../typography/Title';
 
@@ -14,6 +13,7 @@ function FeaturedBlogs() {
           blogs {
             _id
             title
+            publishedAt
             categories {
               title
               slug {

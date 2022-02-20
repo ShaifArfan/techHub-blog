@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogGridStyles } from '../styles/BlogGridStyles';
+import { BlogGridStyles } from '../../styles/blog/BlogGridStyles';
 import BlogItem from './BlogItem';
 
 function BlogGrid({ blogs }) {
@@ -17,6 +17,7 @@ function BlogGrid({ blogs }) {
                 imageData: blog.coverImage.asset.gatsbyImageData,
                 altText: blog.coverImage.alt,
               }}
+              publishedAt={blog.publishedAt}
             />
           ))}
       </BlogGridStyles>

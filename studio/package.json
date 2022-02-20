@@ -17,6 +17,7 @@
 	],
 	"dependencies": {
 		"@sanity/base": "^2.25.4",
+		"@sanity/code-input": "^2.27.0",
 		"@sanity/core": "^2.25.0",
 		"@sanity/default-layout": "^2.25.4",
 		"@sanity/default-login": "^2.24.1",

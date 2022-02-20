@@ -1,3 +1,5 @@
+import { type } from 'os';
+
 export default {
   title: 'Post body',
   name: 'bodyText',
@@ -47,6 +49,7 @@ export default {
           },
         ],
       },
+      of: [{ type: 'customCode' }],
     },
   ],
 };

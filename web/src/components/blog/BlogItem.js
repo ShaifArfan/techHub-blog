@@ -1,11 +1,12 @@
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { format } from 'date-fns';
 import React from 'react';
-import { BlogItemStyles } from '../styles/BlogItemStyles';
-import ParagraphText from './typography/ParagraphText';
-import { Title } from './typography/Title';
+import { BlogItemStyles } from '../../styles/blog/BlogItemStyles';
+import ParagraphText from '../typography/ParagraphText';
+import { Title } from '../typography/Title';
 
-function BlogItem({ path, title, image, categories }) {
+function BlogItem({ path, title, image, categories, publishedAt }) {
   return (
     <BlogItemStyles to={`/blogs/${path}`}>
       <GatsbyImage
@@ -14,6 +15,11 @@ function BlogItem({ path, title, image, categories }) {
         className="img"
       />
       <Title className="title">{title}</Title>
+      {publishedAt && (
+        <ParagraphText className="publishedAt">
+          {format(new Date(publishedAt), 'p, MMMM dd, yyyy')}
+        </ParagraphText>
+      )}
       <ParagraphText className="categoriesText">
         {categories.map((item, index) => (
           <>

@@ -12,7 +12,10 @@ export const BlogItemStyles = styled(Link)`
     transition: 0.3s ease-in-out transform;
   }
   .title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .publishedAt {
+    margin-bottom: 0.3rem;
   }
   &:hover {
     .img {

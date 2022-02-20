@@ -3,7 +3,7 @@ import React from 'react';
 import PageHeader from '../components/PageHeader';
 import SEO from '../components/seo';
 import PageSpace from '../components/PageSpace';
-import BlogGrid from '../components/BlogGrid';
+import BlogGrid from '../components/blog/BlogGrid';
 import Pagination from '../components/Pagination';
 
 export const BlogsQuery = graphql`
@@ -16,6 +16,7 @@ export const BlogsQuery = graphql`
       nodes {
         _id
         title
+        publishedAt
         slug {
           current
         }
