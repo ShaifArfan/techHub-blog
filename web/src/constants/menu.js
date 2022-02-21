@@ -11,4 +11,8 @@ export const menu = [
     title: 'Categories',
     path: '/categories',
   },
+  {
+    title: 'Authors',
+    path: '/authors',
+  },
 ];

@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { TopCategoriesStyles } from '../../styles/homePage/TopCategoriesStyles';
-import CategoryGrid from '../CategoryGrid';
-import CategoryItem from '../CategoryItem';
+import CategoryGrid from '../category/CategoryGrid';
 import ParagraphText from '../typography/ParagraphText';
 import { SectionTitle } from '../typography/Title';
 

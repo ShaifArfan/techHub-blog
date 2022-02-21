@@ -1,5 +1,5 @@
 import React from 'react';
-import { CategoryGridStyles } from '../styles/categoryGridStyles';
+import { CategoryGridStyles } from '../../styles/category/CategoryGridStyles';
 import CategoryItem from './CategoryItem';
 
 function CategoryGrid({ categories }) {
