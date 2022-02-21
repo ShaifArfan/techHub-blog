@@ -1,25 +1,46 @@
 {
-  "name": "tech-hub",
-  "version": "1.0.0",
-  "private": true,
-  "description": "techHub",
-  "author": "arfan",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "dependencies": {
-    "gatsby": "^4.6.0",
-    "gatsby-plugin-sass": "^5.6.0",
-    "gatsby-source-sanity": "^7.3.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "sass": "^1.49.0"
-  }
+	"name": "tech-hub",
+	"version": "1.0.0",
+	"private": true,
+	"description": "techHub",
+	"author": "shaif arfan",
+	"keywords": [
+		"gatsby"
+	],
+	"scripts": {
+		"dev": "gatsby develop",
+		"start": "gatsby develop",
+		"build": "gatsby build",
+		"serve": "gatsby serve",
+		"clean": "gatsby clean"
+	},
+	"dependencies": {
+		"@fontsource/inter": "^4.5.2",
+		"@fontsource/poppins": "^4.5.1",
+		"@portabletext/react": "^1.0.2",
+		"axios": "^0.26.0",
+		"babel-plugin-styled-components": "^2.0.2",
+		"clsx": "^1.1.1",
+		"date-fns": "^2.28.0",
+		"gatsby": "^4.6.0",
+		"gatsby-plugin-image": "^2.6.0",
+		"gatsby-plugin-local-search": "^2.0.1",
+		"gatsby-plugin-react-helmet": "^5.7.0",
+		"gatsby-plugin-sharp": "^4.6.0",
+		"gatsby-plugin-styled-components": "^5.6.0",
+		"gatsby-source-filesystem": "^4.6.0",
+		"gatsby-source-sanity": "^7.3.2",
+		"gatsby-transformer-sharp": "^4.6.0",
+		"normalize.css": "^8.0.1",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-helmet": "^6.1.0",
+		"react-icons": "^4.3.1",
+		"react-syntax-highlighter": "^15.4.5",
+		"react-use-flexsearch": "^0.1.1",
+		"styled-components": "^5.3.3"
+	},
+	"devDependencies": {
+		"dotenv": "^16.0.0"
+	}
 }
