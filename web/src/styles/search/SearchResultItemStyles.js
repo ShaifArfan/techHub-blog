@@ -26,4 +26,9 @@ export const SearchResultItemStyles = styled(Link)`
       }
     }
   }
+  .authorProfileImg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
 `;

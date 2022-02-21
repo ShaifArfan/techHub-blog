@@ -19,6 +19,10 @@ const query = graphql`
       publicStoreURL
       publicIndexURL
     }
+    localSearchAuthors {
+      publicStoreURL
+      publicIndexURL
+    }
   }
 `;
 
@@ -28,6 +32,7 @@ function Search() {
   const { closeSearchModal } = useContext(SearchModalContext);
   const [blogsIndexStore, setBlogsIndexStore] = useState(null);
   const [categoriesIndexStore, setCategoriesIndexStore] = useState(null);
+  const [authorsIndexStore, setAuthorsIndexStore] = useState(null);
   const data = useStaticQuery(query);
 
   useEffect(() => {
@@ -46,19 +51,27 @@ function Search() {
     publicStoreURL: categoriesPublicStoreURL,
     publicIndexURL: categoriesPublicIndexURL,
   } = data.localSearchCategories;
+  const {
+    publicStoreURL: authorsPublicStoreURL,
+    publicIndexURL: authorsPublicIndexURL,
+  } = data.localSearchAuthors;
 
   const handleOnFocus = async () => {
-    if (blogsIndexStore && categoriesIndexStore) return;
+    if (blogsIndexStore && categoriesIndexStore && authorsIndexStore) return;
     const [
       { data: blogsIndex },
       { data: blogsStore },
       { data: categoriesIndex },
       { data: categoriesStore },
+      { data: authorsIndex },
+      { data: authorsStore },
     ] = await Promise.all([
       axios.get(`${blogsPublicIndexURL}`),
       axios.get(`${blogsPublicStoreURL}`),
       axios.get(`${categoriesPublicIndexURL}`),
       axios.get(`${categoriesPublicStoreURL}`),
+      axios.get(`${authorsPublicIndexURL}`),
+      axios.get(`${authorsPublicStoreURL}`),
     ]);
     setBlogsIndexStore({
       index: blogsIndex,
@@ -67,6 +80,10 @@ function Search() {
     setCategoriesIndexStore({
       index: categoriesIndex,
       store: categoriesStore,
+    });
+    setAuthorsIndexStore({
+      index: authorsIndex,
+      store: authorsStore,
     });
   };
 
@@ -82,15 +99,19 @@ function Search() {
           setValue={setSearchQuery}
           onFocus={handleOnFocus}
         />
-        {searchQuery && blogsIndexStore && categoriesIndexStore && (
-          <div className="search__result">
-            <SearchResult
-              searchQuery={searchQuery}
-              blogsIndexStore={blogsIndexStore}
-              categoriesIndexStore={categoriesIndexStore}
-            />
-          </div>
-        )}
+        {searchQuery &&
+          blogsIndexStore &&
+          categoriesIndexStore &&
+          authorsIndexStore && (
+            <div className="search__result">
+              <SearchResult
+                searchQuery={searchQuery}
+                blogsIndexStore={blogsIndexStore}
+                categoriesIndexStore={categoriesIndexStore}
+                authorsIndexStore={authorsIndexStore}
+              />
+            </div>
+          )}
       </div>
     </SearchModalStyles>
   );

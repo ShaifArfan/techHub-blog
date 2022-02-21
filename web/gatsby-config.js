@@ -109,5 +109,44 @@ module.exports = {
           })),
       },
     },
+    {
+      resolve: `gatsby-plugin-local-search`,
+      options: {
+        name: `authors`,
+        engine: `flexsearch`,
+        engineOptions: {
+          tokenize: 'forward',
+        },
+        query: `
+        {
+          allSanityAuthor {
+            nodes{
+              id
+              name
+              slug {
+                current
+              }
+              profileImage {
+                alt
+                asset{
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        } 
+        `,
+        ref: 'id',
+        index: ['name'],
+        store: ['id', 'name', 'slug', 'profileImage'],
+        normalizer: ({ data }) =>
+          data.allSanityAuthor.nodes.map((node) => ({
+            id: node.id,
+            name: node.name,
+            slug: node.slug,
+            profileImage: node.profileImage,
+          })),
+      },
+    },
   ],
 };

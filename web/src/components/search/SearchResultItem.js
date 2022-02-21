@@ -41,4 +41,24 @@ function CategorySearchResultItem({ category }) {
   );
 }
 
-export { CategorySearchResultItem, BlogSearchResultItem };
+function AuthorSearchResultItem({ author }) {
+  const { closeSearchModal } = useContext(SearchModalContext);
+  return (
+    <SearchResultItemStyles
+      to={`/authors/${author.slug.current}`}
+      onClick={() => closeSearchModal()}
+    >
+      <GatsbyImage
+        image={author.profileImage.asset.gatsbyImageData}
+        alt={author.profileImage.alt}
+        className="authorProfileImg"
+      />
+      <Title className="title">{author.name}</Title>
+    </SearchResultItemStyles>
+  );
+}
+export {
+  CategorySearchResultItem,
+  BlogSearchResultItem,
+  AuthorSearchResultItem,
+};
