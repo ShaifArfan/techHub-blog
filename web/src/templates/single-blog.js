@@ -77,10 +77,12 @@ function SingleBlog({ data }) {
             </ParagraphText>
             <ParagraphText className="author">
               <FiUser />
-              <Link to="blogs">{blog.author.name}</Link>
+              <Link to={`/authors/${blog.author.slug.current}`}>
+                {blog.author.name}
+              </Link>
             </ParagraphText>
           </div>
-          <hr />
+          <hr className="hr" />
           <div className="body">
             <MyPortableText value={blog._rawBody} />
           </div>

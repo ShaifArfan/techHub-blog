@@ -33,6 +33,10 @@ export const SingleBlogStyles = styled.div`
       }
     }
   }
+  .hr {
+    margin: 2rem 0;
+    color: var(--gray);
+  }
   .body {
     margin-top: 2rem;
     h1,

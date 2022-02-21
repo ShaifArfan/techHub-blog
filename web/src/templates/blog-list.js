@@ -51,11 +51,13 @@ function Blogs({ data, pageContext }) {
             description="This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award ceremony..."
           />
           <BlogGrid blogs={blogs} />
-          <Pagination
-            currentPage={currentPage}
-            numberOfPages={numberOfPages}
-            baseURL="/blogs"
-          />
+          {numberOfPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              numberOfPages={numberOfPages}
+              baseURL="/blogs"
+            />
+          )}
         </div>
       </PageSpace>
     </>
