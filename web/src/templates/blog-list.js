@@ -45,16 +45,18 @@ function Blogs({ data, pageContext }) {
     <>
       <SEO title="Blogs" />
       <PageSpace top={50} bottom={100}>
-        <PageHeader
-          title="All Blog Posts"
-          description="This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award ceremony..."
-        />
-        <BlogGrid blogs={blogs} />
-        <Pagination
-          currentPage={currentPage}
-          numberOfPages={numberOfPages}
-          baseURL="/blogs"
-        />
+        <div className="container">
+          <PageHeader
+            title="All Blog Posts"
+            description="This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award ceremony..."
+          />
+          <BlogGrid blogs={blogs} />
+          <Pagination
+            currentPage={currentPage}
+            numberOfPages={numberOfPages}
+            baseURL="/blogs"
+          />
+        </div>
       </PageSpace>
     </>
   );

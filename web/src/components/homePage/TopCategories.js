@@ -25,13 +25,11 @@ function TopCategories() {
   const categories = data.allSanityFeatured.nodes[0].category;
   return (
     <TopCategoriesStyles>
-      <div className="container">
-        <SectionTitle>Top Categories</SectionTitle>
-        <ParagraphText className="info">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-          veniam fuga minima.
-        </ParagraphText>
-      </div>
+      <SectionTitle>Top Categories</SectionTitle>
+      <ParagraphText className="info">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae veniam
+        fuga minima.
+      </ParagraphText>
       <CategoryGrid categories={categories} />
     </TopCategoriesStyles>
   );

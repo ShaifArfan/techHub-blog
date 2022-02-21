@@ -5,12 +5,14 @@ import TopCategories from '../components/homePage/TopCategories';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
-  <div>
+  <>
     <SEO />
     <HeroSection />
-    <FeaturedBlogs />
-    <TopCategories />
-  </div>
+    <div className="container">
+      <FeaturedBlogs />
+      <TopCategories />
+    </div>
+  </>
 );
 
 export default IndexPage;

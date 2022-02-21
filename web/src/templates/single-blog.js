@@ -9,6 +9,7 @@ import ParagraphText from '../components/typography/ParagraphText';
 import { Title } from '../components/typography/Title';
 import { SingleBlogStyles } from '../styles/blog/SingleBlogStyles';
 import MyPortableText from '../components/MyPortableText';
+import SEO from '../components/seo';
 
 export const postQuery = graphql`
   query SingleBlogQuery($id: String!) {
@@ -47,6 +48,7 @@ function SingleBlog({ data }) {
   const blog = data.sanityBlog;
   return (
     <SingleBlogStyles>
+      <SEO title={blog.title} />
       <PageSpace top={100} bottom={50}>
         <div className="container">
           <div className="blog-header">

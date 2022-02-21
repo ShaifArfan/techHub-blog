@@ -2,7 +2,7 @@ import React from 'react';
 import MyPortableText from '../MyPortableText';
 import Button from '../buttons/Button';
 import { buttonType } from '../../constants/buttonTypes';
-import { CategoryItemStyles } from '../../styles/CategoryItemStyles';
+import { CategoryItemStyles } from '../../styles/category/CategoryItemStyles';
 import { Title } from '../typography/Title';
 
 function CategoryItem({ title, description, slug }) {
