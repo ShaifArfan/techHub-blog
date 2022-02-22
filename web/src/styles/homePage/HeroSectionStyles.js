@@ -24,11 +24,12 @@ export const HeroSectionStyles = styled.div`
     }
     .left {
       width: 50%;
+      padding: 50px 0;
       .hero__heading {
         max-width: 450px;
         font-size: 4rem;
         font-family: 'Poppins', sans-serif;
-        font-wright: '700';
+        font-weight: '700';
         margin: 0.2rem 0;
       }
       .hero__text {
@@ -57,6 +58,8 @@ export const HeroSectionStyles = styled.div`
       align-items: flex-start;
       justify-content: center;
       flex-direction: column-reverse;
+      padding-top: 80px;
+      padding-bottom: 80px;
       &::after {
         width: 100%;
       }

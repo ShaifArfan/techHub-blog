@@ -115,4 +115,9 @@ export default styled.header`
     display: flex;
     gap: 1rem;
   }
+  .mobileMenuBtn {
+    svg {
+      font-size: 2.5rem;
+    }
+  }
 `;
