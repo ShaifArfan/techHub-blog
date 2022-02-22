@@ -5,7 +5,6 @@ export const SearchFieldStyles = styled.label`
   width: 100%;
   input {
     width: 100%;
-    /* max-width: 500px; */
     font-size: 1.8rem;
     padding: 1rem;
     border-radius: 4px;
@@ -25,5 +24,14 @@ export const SearchFieldStyles = styled.label`
     top: 50%;
     transform: translateY(-50%);
     color: var(--primary);
+  }
+  @media only screen and (max-width: 768px) {
+    input {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      &:focus {
+        outline: 2px solid var(--secondary);
+      }
+    }
   }
 `;

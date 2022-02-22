@@ -4,6 +4,7 @@ import React from 'react';
 import BlogGrid from '../components/blog/BlogGrid';
 import MyPortableText from '../components/MyPortableText';
 import PageSpace from '../components/PageSpace';
+import SEO from '../components/seo';
 import { Title } from '../components/typography/Title';
 import { SingleAuthorStyles } from '../styles/author/SingleAuthorStyles';
 
@@ -48,7 +49,8 @@ function SingleAuthor({ data }) {
   const author = data.sanityAuthor;
   const blogs = data.allSanityBlog.nodes;
   return (
-    <PageSpace top={100} bottom={50}>
+    <PageSpace top={50} bottom={100}>
+      <SEO title={author.name} />
       <div className="container">
         <SingleAuthorStyles>
           <div className="author-header">

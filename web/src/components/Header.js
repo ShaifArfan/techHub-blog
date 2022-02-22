@@ -40,6 +40,12 @@ function Header() {
     openSearchModal();
   };
 
+  const handleNavItemClick = () => {
+    if (isNavOpen) {
+      setIsNavOpen(false);
+    }
+  };
+
   return (
     <HeaderStyles className={clsx(scrollPos <= 0 && 'scrolled')}>
       <div className="container">
@@ -101,7 +107,9 @@ function Header() {
               <ul>
                 {menu.map((item) => (
                   <li key={item.path}>
-                    <Link to={item.path}>{item.title}</Link>
+                    <Link to={item.path} onClick={handleNavItemClick}>
+                      {item.title}
+                    </Link>
                   </li>
                 ))}
                 {!isMobile && (
