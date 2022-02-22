@@ -31,7 +31,7 @@ function AuthorList({ data, pageContext }) {
   const { currentPage, numberOfPages } = pageContext;
 
   return (
-    <PageSpace top={50} bottom={100}>
+    <PageSpace top={80} bottom={100}>
       <SEO title="Authors" />
       <div className="container">
         <PageHeader

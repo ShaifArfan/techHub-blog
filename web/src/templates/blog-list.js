@@ -44,7 +44,7 @@ function Blogs({ data, pageContext }) {
   return (
     <>
       <SEO title="Blogs" />
-      <PageSpace top={50} bottom={100}>
+      <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
             title="All Blog Posts"

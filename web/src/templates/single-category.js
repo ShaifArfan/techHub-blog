@@ -50,7 +50,7 @@ function SingleCategory({ data }) {
   const blogs = data.allSanityBlog.nodes;
 
   return (
-    <PageSpace top={50} bottom={100}>
+    <PageSpace top={80} bottom={100}>
       <SingleCategoryStyles
         coverImage={
           category.coverImage.asset.gatsbyImageData.images.fallback.srcSet

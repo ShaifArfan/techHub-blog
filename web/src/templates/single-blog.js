@@ -49,7 +49,7 @@ function SingleBlog({ data }) {
   return (
     <SingleBlogStyles>
       <SEO title={blog.title} />
-      <PageSpace top={50} bottom={100}>
+      <PageSpace top={80} bottom={100}>
         <div className="container">
           <div className="blog-header">
             <GatsbyImage

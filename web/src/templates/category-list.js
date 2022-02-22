@@ -32,7 +32,7 @@ function Categories({ data, pageContext }) {
   return (
     <>
       <SEO title="Categories" />
-      <PageSpace top={50} bottom={100}>
+      <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
             title="All Categories"
