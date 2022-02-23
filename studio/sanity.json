@@ -1,34 +1,28 @@
 {
-  "root": true,
-  "project": {
-    "name": "techHub-blog"
-  },
-  "api": {
-    "projectId": "mgmffcqu",
-    "dataset": "production"
-  },
-  "plugins": [
-    "@sanity/base",
-    "@sanity/default-layout",
-    "@sanity/default-login",
-    "@sanity/desk-tool",
-    "@sanity/code-input"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
-    }
-  },
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema"
-    },
-    {
-      "name": "part:@sanity/desk-tool/structure",
-      "path": "./components/SidebarList"
-    }
-  ]
+	"root": true,
+	"project": {
+		"name": "techHub-blog"
+	},
+	"plugins": [
+		"@sanity/base",
+		"@sanity/default-layout",
+		"@sanity/default-login",
+		"@sanity/desk-tool",
+		"@sanity/code-input"
+	],
+	"env": {
+		"development": {
+			"plugins": ["@sanity/vision"]
+		}
+	},
+	"parts": [
+		{
+			"name": "part:@sanity/base/schema",
+			"path": "./schemas/schema"
+		},
+		{
+			"name": "part:@sanity/desk-tool/structure",
+			"path": "./components/SidebarList"
+		}
+	]
 }
