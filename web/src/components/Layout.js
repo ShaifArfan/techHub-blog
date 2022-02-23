@@ -12,7 +12,7 @@ function Layout({ children }) {
       <GlobalStyles />
       <Search />
       <Header />
-      {children}
+      <main>{children}</main>
       <Footer />
     </SearchModalContextProvider>
   );

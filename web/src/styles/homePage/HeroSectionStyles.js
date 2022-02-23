@@ -77,6 +77,7 @@ export const HeroSectionStyles = styled.div`
       .left {
         width: 100%;
         margin-top: 1rem;
+        padding: 0;
         .hero__heading {
           max-width: 330px;
           font-size: 3rem;
