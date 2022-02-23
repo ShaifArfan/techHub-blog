@@ -27,8 +27,8 @@ export const SearchFieldStyles = styled.label`
   }
   @media only screen and (max-width: 768px) {
     input {
-      font-size: 1.5rem;
-      padding: 0.5rem;
+      font-size: 1.6rem;
+      padding: 0.6rem;
       &:focus {
         outline: 2px solid var(--secondary);
       }
