@@ -8,28 +8,9 @@ import ActionButton from './buttons/ActionButton';
 import { menu } from '../constants/menu';
 import { SearchModalContext } from '../contexts/searchModalContext';
 
-const isMobileWidth = () => {
-  if (typeof window !== 'undefined') {
-    return window.matchMedia('(max-width: 768px)').matches;
-  }
-};
-
 function Header() {
-  const [isMobile, setIsMobile] = useState(isMobileWidth());
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { openSearchModal } = useContext(SearchModalContext);
-
-  useEffect(() => {
-    const checkWidth = () => {
-      setIsMobile(isMobileWidth());
-    };
-
-    window.addEventListener('resize', checkWidth);
-
-    return () => {
-      window.removeEventListener('resize', checkWidth);
-    };
-  }, []);
 
   useEffect(() => {
     if (isNavOpen) {
@@ -56,57 +37,45 @@ function Header() {
           <div className="logo">
             <Logo />
           </div>
-          <div
-            className={clsx(
-              'nav__wrapper',
-              isMobile && 'mobileNav',
-              isNavOpen && 'open'
-            )}
-          >
-            {isMobile && (
-              <>
-                <div className="mobileIcon">
-                  <div className="searchIcon">
-                    <div
-                      className="searchIcon__wrapper"
-                      onClick={handleSearchModalOpen}
-                      onKeyDown={handleSearchModalOpen}
-                      tabIndex={0}
-                      role="button"
-                    >
-                      <MdSearch />
-                    </div>
-                  </div>
-                  <ActionButton
-                    className="mobileMenuBtn"
-                    onKeyDown={() => setIsNavOpen(true)}
-                    onClick={() => setIsNavOpen(true)}
-                  >
-                    <MdMenu />
-                  </ActionButton>
+          <div className={clsx('nav__wrapper', isNavOpen && 'open')}>
+            <div className="mobileIcon">
+              <div className="searchIcon">
+                <div
+                  className="searchIcon__wrapper"
+                  onClick={handleSearchModalOpen}
+                  onKeyDown={handleSearchModalOpen}
+                  tabIndex={0}
+                  role="button"
+                >
+                  <MdSearch />
                 </div>
-                {isNavOpen && (
-                  <div
-                    aria-label="Close Menu"
-                    role="button"
-                    tabIndex={0}
-                    className="mobileNavBg"
-                    onKeyDown={() => setIsNavOpen(false)}
-                    onClick={() => setIsNavOpen(false)}
-                  />
-                )}
-              </>
+              </div>
+              <ActionButton
+                className="mobileMenuBtn"
+                onKeyDown={() => setIsNavOpen(true)}
+                onClick={() => setIsNavOpen(true)}
+              >
+                <MdMenu />
+              </ActionButton>
+            </div>
+            {isNavOpen && (
+              <div
+                aria-label="Close Menu"
+                role="button"
+                tabIndex={0}
+                className="mobileNavBg"
+                onKeyDown={() => setIsNavOpen(false)}
+                onClick={() => setIsNavOpen(false)}
+              />
             )}
             <nav>
-              {isMobile && (
-                <ActionButton
-                  className="mobileMenuCloseBtn"
-                  onClick={() => setIsNavOpen(!isNavOpen)}
-                  onKeyDown={() => setIsNavOpen}
-                >
-                  <MdClose />
-                </ActionButton>
-              )}
+              <ActionButton
+                className="mobileMenuCloseBtn"
+                onClick={() => setIsNavOpen(!isNavOpen)}
+                onKeyDown={() => setIsNavOpen}
+              >
+                <MdClose />
+              </ActionButton>
               <ul>
                 {menu.map((item) => (
                   <li key={item.path}>
@@ -115,19 +84,17 @@ function Header() {
                     </Link>
                   </li>
                 ))}
-                {!isMobile && (
-                  <li className="searchIcon">
-                    <div
-                      className="searchIcon__wrapper"
-                      onClick={handleSearchModalOpen}
-                      onKeyDown={handleSearchModalOpen}
-                      tabIndex={0}
-                      role="button"
-                    >
-                      <MdSearch />
-                    </div>
-                  </li>
-                )}
+                <li className="searchIcon">
+                  <div
+                    className="searchIcon__wrapper"
+                    onClick={handleSearchModalOpen}
+                    onKeyDown={handleSearchModalOpen}
+                    tabIndex={0}
+                    role="button"
+                  >
+                    <MdSearch />
+                  </div>
+                </li>
               </ul>
             </nav>
           </div>

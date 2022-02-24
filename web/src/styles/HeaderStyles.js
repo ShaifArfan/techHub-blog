@@ -15,7 +15,7 @@ export default styled.header`
     justify-content: space-between;
     align-items: center;
   }
-  nav {
+  .nav__wrapper {
     ul {
       display: flex;
       align-items: center;
@@ -38,67 +38,7 @@ export default styled.header`
       }
     }
   }
-  .mobileNav {
-    nav {
-      z-index: 1002;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 80%;
-      transform: translateX(100%);
-      background-color: var(--black-2);
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s ease transform;
-      ul {
-        width: 90%;
-        margin: 0 auto;
-        flex-direction: column;
-        li {
-          display: block;
-          margin: 0.5rem 0;
-          &:hover {
-            a {
-              background: var(--black-1);
-            }
-          }
-          a {
-            width: 100%;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-          }
-        }
-      }
-      .mobileMenuCloseBtn {
-        color: crimson;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        border-color: crimson;
-        &:hover {
-          background-color: crimson;
-          color: var(--white);
-        }
-      }
-    }
-    &.open {
-      nav {
-        transform: translateX(0);
-      }
-    }
-    .mobileNavBg {
-      z-index: 1001;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      transition: opacity 0.6s linear 0s;
-      background: rgba(0, 0, 0, 0.5);
-    }
-  }
+
   .searchIcon {
     cursor: pointer;
     font-size: 25px;
@@ -111,13 +51,91 @@ export default styled.header`
       background-color: var(--black-2);
     }
   }
-  .mobileIcon {
-    display: flex;
-    gap: 1rem;
-  }
+  .mobileMenuCloseBtn,
+  .mobileNavBg,
+  .mobileIcon,
   .mobileMenuBtn {
-    svg {
-      font-size: 2.5rem;
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .mobileMenuCloseBtn,
+    .mobileNavBg,
+    .mobileIcon,
+    .mobileMenuBtn {
+      display: initial;
+    }
+    .nav__wrapper {
+      nav {
+        z-index: 1002;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        transform: translateX(100%);
+        background-color: var(--black-2);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease transform;
+        ul {
+          width: 90%;
+          margin: 0 auto;
+          flex-direction: column;
+          li {
+            display: block;
+            margin: 0.5rem 0;
+            &:hover {
+              a {
+                background: var(--black-1);
+              }
+            }
+            a {
+              width: 100%;
+              padding: 0.5rem 1rem;
+              border-radius: 4px;
+            }
+            &.searchIcon {
+              display: none;
+            }
+          }
+        }
+        .mobileMenuCloseBtn {
+          color: crimson;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          border-color: crimson;
+          &:hover {
+            background-color: crimson;
+            color: var(--white);
+          }
+        }
+      }
+      &.open {
+        nav {
+          transform: translateX(0);
+        }
+      }
+      .mobileNavBg {
+        z-index: 1001;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.6s linear 0s;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .mobileIcon {
+      display: flex;
+      gap: 1rem;
+    }
+    .mobileMenuBtn {
+      svg {
+        font-size: 2.5rem;
+      }
     }
   }
 `;
