@@ -64,16 +64,16 @@ function SingleBlog({ data }) {
             </ParagraphText>
             <ParagraphText className="categoriesText">
               <BiCategory />
-              <div>
+              <span>
                 {blog.categories.map((item, index) => (
-                  <>
+                  <span key={item.slug.current}>
                     <Link to={`/categories/${item.slug.current}`}>
                       {item.title}
                     </Link>
                     {index < blog.categories.length - 1 ? ', ' : ''}
-                  </>
+                  </span>
                 ))}
-              </div>
+              </span>
             </ParagraphText>
             <ParagraphText className="author">
               <FiUser />

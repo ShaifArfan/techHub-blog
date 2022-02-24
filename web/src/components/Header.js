@@ -8,24 +8,27 @@ import ActionButton from './buttons/ActionButton';
 import { menu } from '../constants/menu';
 import { SearchModalContext } from '../contexts/searchModalContext';
 
+const isMobileWidth = () => {
+  if (typeof window !== 'undefined') {
+    return window.matchMedia('(max-width: 768px)').matches;
+  }
+};
+
 function Header() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(isMobileWidth());
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [scrollPos, setScrollPos] = useState(true);
   const { openSearchModal } = useContext(SearchModalContext);
 
   useEffect(() => {
     const checkWidth = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
-    };
-    const handleScroll = () => {
-      setScrollPos(window.scrollY < 100);
+      setIsMobile(isMobileWidth());
     };
 
-    checkWidth();
-    handleScroll();
     window.addEventListener('resize', checkWidth);
-    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('resize', checkWidth);
+    };
   }, []);
 
   useEffect(() => {
@@ -47,7 +50,7 @@ function Header() {
   };
 
   return (
-    <HeaderStyles className={clsx(scrollPos <= 0 && 'scrolled')}>
+    <HeaderStyles>
       <div className="container">
         <div className="header__container">
           <div className="logo">

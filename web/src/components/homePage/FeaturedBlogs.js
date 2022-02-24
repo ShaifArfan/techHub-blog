@@ -11,7 +11,7 @@ function FeaturedBlogs() {
       allSanityFeatured(filter: { _id: { eq: "featuredItems" } }) {
         nodes {
           blogs {
-            _id
+            id
             title
             publishedAt
             categories {

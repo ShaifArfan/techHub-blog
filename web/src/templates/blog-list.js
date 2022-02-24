@@ -14,7 +14,7 @@ export const BlogsQuery = graphql`
       skip: $offset
     ) {
       nodes {
-        _id
+        id
         title
         publishedAt
         slug {

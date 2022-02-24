@@ -11,7 +11,7 @@ function TopCategories() {
       allSanityFeatured(filter: { _id: { eq: "featuredItems" } }) {
         nodes {
           category {
-            _id
+            id
             title
             slug {
               current

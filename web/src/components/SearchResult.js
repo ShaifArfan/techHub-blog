@@ -29,8 +29,6 @@ function SearchResult({
     authorsIndexStore.store
   );
 
-  console.log({ authorsResult });
-
   if (
     blogsResult.length === 0 &&
     categoriesResult.length === 0 &&
@@ -45,7 +43,7 @@ function SearchResult({
         <>
           <ParagraphText>Blogs</ParagraphText>
           {blogsResult.map((result) => (
-            <BlogSearchResultItem blog={result} />
+            <BlogSearchResultItem key={result.id} blog={result} />
           ))}
         </>
       )}
@@ -53,7 +51,7 @@ function SearchResult({
         <>
           <ParagraphText>Categories</ParagraphText>
           {categoriesResult.map((result) => (
-            <CategorySearchResultItem category={result} />
+            <CategorySearchResultItem key={result.id} category={result} />
           ))}
         </>
       )}
@@ -61,7 +59,7 @@ function SearchResult({
         <>
           <ParagraphText>Authors</ParagraphText>
           {authorsResult.map((result) => (
-            <AuthorSearchResultItem author={result} />
+            <AuthorSearchResultItem key={result.id} author={result} />
           ))}
         </>
       )}

@@ -38,6 +38,7 @@ function Search() {
   useEffect(() => {
     if (isSearchModalOpen) {
       document.body.style.overflow = 'hidden';
+      setSearchQuery('');
     } else {
       document.body.style.overflow = 'initial';
     }

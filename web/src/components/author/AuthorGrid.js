@@ -7,6 +7,7 @@ function AuthorGrid({ authors }) {
     <AuthorGridStyles>
       {authors.map((item) => (
         <AuthorItem
+          key={item.id}
           name={item.name}
           slug={item.slug}
           profileImage={item.profileImage}
