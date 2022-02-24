@@ -8,19 +8,27 @@ import ActionButton from './buttons/ActionButton';
 import { menu } from '../constants/menu';
 import { SearchModalContext } from '../contexts/searchModalContext';
 
+const isMobileWidth = () => {
+  if (typeof window !== 'undefined') {
+    return window.matchMedia('(max-width: 768px)').matches;
+  }
+};
+
 function Header() {
-  const [isMobile, setIsMobile] = useState(
-    window.matchMedia('(max-width: 768px)').matches
-  );
+  const [isMobile, setIsMobile] = useState(isMobileWidth());
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { openSearchModal } = useContext(SearchModalContext);
 
   useEffect(() => {
     const checkWidth = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+      setIsMobile(isMobileWidth());
     };
-    checkWidth();
+
     window.addEventListener('resize', checkWidth);
+
+    return () => {
+      window.removeEventListener('resize', checkWidth);
+    };
   }, []);
 
   useEffect(() => {
