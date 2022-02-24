@@ -1,7 +1,10 @@
+import { MdImage } from 'react-icons/md';
+
 export default {
   name: 'customImage',
-  title: 'Custom Image',
+  title: 'Image',
   type: 'image',
+  icon: MdImage,
   options: {
     hotspot: true,
   },
@@ -19,6 +22,7 @@ export default {
   preview: {
     select: {
       imageUrl: 'asset.url',
+      alt: 'alt',
     },
   },
 };

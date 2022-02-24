@@ -1,7 +1,10 @@
+import { MdCode } from 'react-icons/md';
+
 export default {
   name: 'customCode',
-  title: 'Custom Code',
+  title: 'Code',
   type: 'object',
+  icon: MdCode,
   fields: [
     {
       name: 'code',
@@ -9,4 +12,9 @@ export default {
       type: 'code',
     },
   ],
+  preview: {
+    select: {
+      title: 'code.code',
+    },
+  },
 };

@@ -14,7 +14,7 @@ export const CategoryListQuery = graphql`
       skip: $offset
     ) {
       nodes {
-        _id
+        id
         title
         slug {
           current
@@ -28,7 +28,7 @@ export const CategoryListQuery = graphql`
 function Categories({ data, pageContext }) {
   const { currentPage, numberOfPages } = pageContext;
   const categories = data.allSanityCategory.nodes;
-  console.log(categories);
+
   return (
     <>
       <SEO title="Categories" />

@@ -51,17 +51,14 @@ function SingleCategory({ data }) {
 
   return (
     <PageSpace top={80} bottom={100}>
-      <SingleCategoryStyles
-        coverImage={
-          category.coverImage.asset.gatsbyImageData.images.fallback.srcSet
-        }
-      >
+      <SingleCategoryStyles>
         <div className="container">
           <SEO title={category.title} />
           <PageHeader title={category.title} className="pageHeader">
             <MyPortableText value={category._rawDescription} />
             <GatsbyImage
               image={category.coverImage.asset.gatsbyImageData}
+              alt={category.coverImage.alt}
               className="coverImage"
             />
           </PageHeader>

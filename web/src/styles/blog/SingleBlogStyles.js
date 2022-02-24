@@ -45,5 +45,12 @@ export const SingleBlogStyles = styled.div`
     h4 {
       margin: 1rem 0;
     }
+    .bodyImage {
+      margin: 2rem 0;
+    }
+    .bodyCode {
+      margin: 2rem 0;
+      font-size: 2rem;
+    }
   }
 `;

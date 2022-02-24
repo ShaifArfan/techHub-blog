@@ -1,4 +1,5 @@
 require('dotenv').config('./.env');
+const sanityConfig = require('./sanity-config.js');
 
 module.exports = {
   siteMetadata: {
@@ -14,8 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
+        ...sanityConfig,
       },
     },
     {

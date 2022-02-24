@@ -8,13 +8,17 @@ import { Title } from '../typography/Title';
 
 function BlogItem({ path, title, image, categories, publishedAt }) {
   return (
-    <BlogItemStyles to={`/blogs/${path}`}>
-      <GatsbyImage
-        image={image.imageData}
-        alt={image.altText}
-        className="img"
-      />
-      <Title className="title">{title}</Title>
+    <BlogItemStyles>
+      <Link to={`/blogs/${path}`}>
+        <GatsbyImage
+          image={image.imageData}
+          alt={image.altText}
+          className="img"
+        />
+      </Link>
+      <Link to={`/blogs/${path}`}>
+        <Title className="title">{title}</Title>
+      </Link>
       {publishedAt && (
         <ParagraphText className="publishedAt">
           {format(new Date(publishedAt), 'p, MMMM dd, yyyy')}
@@ -22,10 +26,10 @@ function BlogItem({ path, title, image, categories, publishedAt }) {
       )}
       <ParagraphText className="categoriesText">
         {categories.map((item, index) => (
-          <>
+          <span key={item.slug.current}>
             <Link to={`/categories/${item.slug.current}`}>{item.title}</Link>
             {index < categories.length - 1 ? ', ' : ''}
-          </>
+          </span>
         ))}
       </ParagraphText>
     </BlogItemStyles>

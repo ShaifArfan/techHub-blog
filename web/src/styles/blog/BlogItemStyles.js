@@ -1,9 +1,7 @@
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-export const BlogItemStyles = styled(Link)`
+export const BlogItemStyles = styled.div`
   display: inline-block;
-  cursor: pointer;
   border-radius: 12px;
   .img {
     height: 250px;
