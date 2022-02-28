@@ -4,10 +4,14 @@
 
 A complete blog website created with `JAMstack`. ([Gatsby.js](https://www.gatsbyjs.org/) & [Sanity.io](https://sanity.io)).
 
-Made with ❤️ by [Shaif Arfan][arfan-ig]
-
 - Live Preview: [http://techhub-blog.vercel.app/][preview]
 - YouTube Tutorial: [Coming Soon][wc-yt]
+
+### Made with ❤️ by [Shaif Arfan][arfan-ig]
+
+Like my works and want to support me?
+
+<a href="https://www.buymeacoffee.com/shaifarfan08" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 162.75px !important;" ></a>
 
 ---
 
