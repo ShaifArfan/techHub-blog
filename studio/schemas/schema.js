@@ -10,8 +10,8 @@ import author from './documents/author';
 import featured from './documents/featured';
 
 // import object
-import bodyPortableText from './objects/bodyText';
-import excerptText from './objects/excerptText';
+import richText from './objects/richText';
+import normalText from './objects/normalText';
 import customImage from './objects/customImage';
 import customCode from './objects/customCode';
 
@@ -25,8 +25,8 @@ export default createSchema({
     featured,
 
     // object schemas
-    bodyPortableText,
-    excerptText,
+    normalText,
+    richText,
     customImage,
     customCode,
   ]),
