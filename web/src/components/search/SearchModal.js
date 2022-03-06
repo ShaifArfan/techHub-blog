@@ -6,7 +6,7 @@ import { MdClose } from 'react-icons/md';
 import { SearchModalContext } from '../../contexts/searchModalContext';
 import { SearchModalStyles } from '../../styles/search/SearchModalStyles';
 import ActionButton from '../buttons/ActionButton';
-import SearchResult from '../SearchResult';
+import SearchResult from './SearchResult';
 import SearchField from './SearchField';
 
 const query = graphql`

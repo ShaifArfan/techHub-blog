@@ -71,8 +71,8 @@ function Header() {
             <nav>
               <ActionButton
                 className="mobileMenuCloseBtn"
-                onClick={() => setIsNavOpen(!isNavOpen)}
-                onKeyDown={() => setIsNavOpen}
+                onClick={() => setIsNavOpen(false)}
+                onKeyDown={() => setIsNavOpen(false)}
               >
                 <MdClose />
               </ActionButton>
