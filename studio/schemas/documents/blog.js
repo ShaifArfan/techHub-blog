@@ -12,7 +12,6 @@ export default {
       name: 'title',
       type: 'string',
     },
-    // { type: 'code', name: 'code', title: 'Code' },
     {
       title: 'Slug',
       name: 'slug',
@@ -52,13 +51,13 @@ export default {
     {
       title: 'Excerpt',
       name: 'excerpt',
-      type: 'excerptText',
+      type: 'normalText',
       description: 'A short description of the blog post',
     },
     {
       title: 'Blog Body',
       name: 'body',
-      type: 'bodyText',
+      type: 'richText',
     },
   ],
   preview: {

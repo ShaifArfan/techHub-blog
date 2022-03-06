@@ -28,7 +28,7 @@ export default {
     {
       name: 'bio',
       title: 'Bio',
-      type: 'bodyText',
+      type: 'normalText',
     },
   ],
   preview: {
