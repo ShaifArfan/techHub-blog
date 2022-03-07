@@ -4,8 +4,9 @@
 
 A complete blog website created with `JAMstack`. ([Gatsby.js](https://www.gatsbyjs.org/) & [Sanity.io](https://sanity.io)).
 
-- Live Preview: [http://techhub-blog.vercel.app/][preview]
-- YouTube Tutorial: [Coming Soon][wc-yt]
+**Live Preview: [http://techhub-blog.vercel.app/][preview]**
+
+**YouTube Tutorial: [🔗Playlist][project-playlist]**
 
 ### Made with ❤️ by [Shaif Arfan][arfan-ig]
 
@@ -55,7 +56,7 @@ You can find all the starter files in starter-files branch. You can to go to the
 
 ## Getting Started
 
-You can follow our complete youtube tutorial [Coming Soon]
+You can follow our complete youtube tutorial [Playlist][project-playlist]
 or You can clone the project and git checkout to starter-files branch to get started.
 
 ## Tools Used
@@ -72,7 +73,7 @@ or You can clone the project and git checkout to starter-files branch to get sta
 
 ### Q: How can i get started?
 
-You can get started by following the YouTube tutorial of this project. Here is the full tutorial video link: [coming soon].
+You can get started by following the YouTube tutorial of this project. Here is the full tutorial video link: [Playlist][project-playlist].
 
 ### Q: I can use this project for my website?
 
@@ -98,3 +99,4 @@ Happy Coding! ✨🚀
 [wc-projects]: https://github.com/ShaifArfan/wc-project-tutorials
 [wc-fb-group]: https://www.facebook.com/groups/webcifar
 [mit]: https://choosealicense.com/licenses/mit/
+[project-playlist]: https://www.youtube.com/playlist?list=PLRv_Gd5w9e7miD-rZTzTFi8mFSCI5chXI

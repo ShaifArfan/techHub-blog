@@ -4,8 +4,8 @@ import {
   AuthorSearchResultItem,
   BlogSearchResultItem,
   CategorySearchResultItem,
-} from './search/SearchResultItem';
-import ParagraphText from './typography/ParagraphText';
+} from './SearchResultItem';
+import ParagraphText from '../typography/ParagraphText';
 
 function SearchResult({
   searchQuery,
