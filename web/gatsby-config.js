@@ -39,12 +39,6 @@ module.exports = {
               slug {
                 current
               }
-              categories {
-                title
-                slug {
-                  current
-                }
-              }
               coverImage {
                 alt
                 asset {
@@ -58,21 +52,13 @@ module.exports = {
         `,
         ref: 'id',
         index: ['title'],
-        store: [
-          'id',
-          'title',
-          'publishedAt',
-          'slug',
-          'categories',
-          'coverImage',
-        ],
+        store: ['id', 'title', 'publishedAt', 'slug', 'coverImage'],
         normalizer: ({ data }) =>
           data.allSanityBlog.nodes.map((node) => ({
             id: node.id,
             title: node.title,
             publishedAt: node.publishedAt,
             slug: node.slug,
-            categories: node.categories,
             coverImage: node.coverImage,
           })),
       },

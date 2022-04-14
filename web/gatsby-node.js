@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allSanityBlog(filter: { slug: { current: { ne: "" } } }) {
+      allSanityBlog {
         nodes {
           id
           slug {
