@@ -6,7 +6,7 @@ import PageSpace from '../components/PageSpace';
 import Pagination from '../components/Pagination';
 import SEO from '../components/seo';
 
-export const BlogsQuery = graphql`
+export const AuthorsQuery = graphql`
   query authorQuery($limit: Int!, $offset: Int!) {
     allSanityAuthor(limit: $limit, skip: $offset) {
       nodes {

@@ -1,4 +1,4 @@
-const createBlogPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const postsPerPage = parseInt(process.env.GATSBY_POST_PER_PAGE) || 10;
   // templates path
   const singleBlogTemplate = require.resolve('./src/templates/single-blog.js');
@@ -18,7 +18,7 @@ const createBlogPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allSanityBlog(filter: { slug: { current: { ne: "" } } }) {
+      allSanityBlog {
         nodes {
           id
           slug {
@@ -121,8 +121,4 @@ const createBlogPages = async ({ graphql, actions }) => {
       },
     });
   });
-};
-
-exports.createPages = async ({ graphql, actions }) => {
-  await createBlogPages({ graphql, actions });
 };

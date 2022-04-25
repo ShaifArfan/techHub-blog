@@ -7,7 +7,9 @@ export const BlogItemStyles = styled.div`
     height: 250px;
     margin-bottom: 1.5rem;
     border-radius: 12px;
-    transition: 0.3s ease-in-out transform;
+    [data-main-image] {
+      transition: 0.3s ease-in-out transform;
+    }
   }
   .title {
     margin-bottom: 0.5rem;
@@ -16,7 +18,7 @@ export const BlogItemStyles = styled.div`
     margin-bottom: 0.3rem;
   }
   &:hover {
-    .img {
+    .img [data-main-image] {
       transform: scale(1.05);
     }
   }

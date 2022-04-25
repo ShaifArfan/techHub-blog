@@ -34,11 +34,6 @@ export const postQuery = graphql`
         slug {
           current
         }
-        profileImage {
-          asset {
-            gatsbyImageData
-          }
-        }
       }
     }
   }
